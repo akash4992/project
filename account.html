@@ -1,0 +1,286 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+   <style>
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+   </style>
+    <!-- Required meta tags -->
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>hii</title>
+  </head>
+  <body>
+
+<div class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <a class="navbar-brand" href="/home/">Insurence</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" href="/home/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about_us/">AboutUs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact/">Contact</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="/index/">Service</a>
+      </li>
+  </ul>
+       <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button type="submit" class="btn btn-info">Search</button>
+    </form>
+
+  </div>
+</nav>
+</div>
+  <div id="wrapper" style="margin-top: 60px; height: 200px">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" style="height: 570px">
+            <ul class="sidebar-nav">
+
+                <li>
+                    <a href="/info/">Info</a>
+                </li>
+
+                <li>
+                    <a href="/newsubmission/">New Submission</a>
+                </li>
+                <li>
+                    <a href="/reneawal/"> Reneawal</a>
+                </li>
+                <li>
+                    <a href="/contact/"> Other Policy Tranasaction</a>
+                </li>
+
+
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-primary" role="alert">
+                       <ul class="nav justify-content-center">
+  <li class="nav-item">
+ <a href="/account1/" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Account</a>
+  </li>
+  <li class="nav-item">
+<a href="/policy/" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Policy</a>
+  </li>
+
+</ul>
+                            </div>
+                     <div class="panel panel-primary">
+      <div class="panel-heading">Enter Client Infomration</div>
+      <div class="panel-body">
+    <form>
+  <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="colFormLabel" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Father Name</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="colFormLabel" placeholder="Father Name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Mother Name</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="colFormLabel" placeholder="Mother Name">
+    </div>
+  </div>
+         <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="colFormLabel" placeholder="Address">
+    </div>
+  </div>
+         <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Address 2</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="colFormLabel" placeholder="Address">
+    </div>
+  </div>
+          <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">D.O.B</label>
+    <div class="col-sm-5">
+      <input type="Date" class="form-control" id="colFormLabel">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Gender</label>
+    <div class="col-sm-5">
+     <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Male</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Female</label>
+</div>
+
+    </div>
+  </div>
+        <button type=Submit" class="btn btn-primary btn-lg btn-block">Save</button>
+
+
+    </form>
+      </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+  {% block content %}
+  {% endblock %}
+<!-- Footer -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
